@@ -1,1 +1,2 @@
-time_counter ():
+class time_counter:
+    def 
