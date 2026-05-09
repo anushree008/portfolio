@@ -25,8 +25,10 @@ class ActivityChoice:
             user_choice = int(input("How many minutes? "))
             my_timer = FocusTimer(user_choice)
             my_timer.start_countdown()
+        elif self.activity_choice == "productivity":
+            print("testing")
         else:
-            print("test")
+            print("testing")
 
 activity = input("What do you want to do?:\n")
 my_choice = ActivityChoice(activity)
