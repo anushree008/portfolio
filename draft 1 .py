@@ -6,6 +6,7 @@ class FocusTimer:
         self.is_running = False
 
     def start_countdown(self):
+        print("\n--- Timer Menu ---")
         self.is_running = True
         while self.time_left >= 0:
             min, sec = divmod(self.time_left, 60)
