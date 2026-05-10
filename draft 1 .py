@@ -10,7 +10,7 @@ class FocusTimer:
         while self.time_left >= 0:
             min, sec = divmod(self.time_left, 60)
             print(f"Time remaining: {min:02d}:{sec:02d}")
-            
+
             time.sleep(1)
             self.time_left -= 1
         
@@ -40,22 +40,22 @@ class ProductivityManager:
         task_name = input("Task name:\n")
         task_type = input("Category name:\n")
         task_difficulty = int(input("Task difficulty (1-5):\n"))
-        tasks_dictonary = {
+        tasks_dictionary = {
             "Name" : task_name,
             "Category" : task_type,
             "Difficulty" :task_difficulty
         }
-        tasks.append(tasks_dictonary)
+        self.tasks.append(tasks_dictionary)
 
     def remove_task(self):
-        for index, task in enumerate(tasks):
+        for index, task in enumerate(self.tasks):
             print(f"{index}: {task['Name']}")
         removing_choice = int(input("Enter the number of the task to remove: "))
-        tasks.pop(removing_choice)
+        self.tasks.pop(removing_choice)
         print("Task removed.")
 
     def view_tasks(self):
-        print(tasks)
+        print(self.tasks)
 
 #asking user for the activity they wish to do
 class ActivityChoice:
