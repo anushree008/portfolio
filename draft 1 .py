@@ -6,12 +6,10 @@ class FocusTimer:
         self.is_running = False
 
     def start_countdown(self):
-        print("\n--- Timer Menu ---")
         self.is_running = True
         while self.time_left >= 0:
             min, sec = divmod(self.time_left, 60)
             print(f"Time remaining: {min:02d}:{sec:02d}")
-
             time.sleep(1)
             self.time_left -= 1
         
@@ -24,7 +22,7 @@ class ProductivityManager:
 
     def run_menu(self):
         while True:
-            print("\n--- Productivity Menu ---")
+            print("\n--- Productivity Menu ---\n")
             choice = int(input("What do you wish to do?\n1. Add new task\n2. Remove existing task\n3. View existing tasks\n4. Back to main menu\n\nChoice: "))
             if choice == 1:
                 self.add_task()
@@ -64,6 +62,7 @@ class ActivityChoice:
         self.activity_choice = activity_choice
     def status(self):
         if self.activity_choice == "timer":
+            print("\n--- Timer Menu ---\n")
             user_choice = int(input("How many minutes? "))
             my_timer = FocusTimer(user_choice)
             my_timer.start_countdown()
