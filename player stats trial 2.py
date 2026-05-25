@@ -66,5 +66,7 @@ with open("/Users/anushreegovilkar/Documents/SRHIC/UG08/portfolio/productivity d
 #saving completed tasks to file
 with open("/Users/anushreegovilkar/Documents/SRHIC/UG08/portfolio/completed tasks.txt", "w") as f:
     json.dump(completed_tasks, f)
+completed_tasks_difficulties = [task["Difficulty"] for task in completed_tasks]
+points = sum(completed_tasks_difficulties)
 #display completed tasks
 print(f"Completed tasks: {completed_tasks}")
