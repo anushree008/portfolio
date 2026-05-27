@@ -22,14 +22,14 @@ class ProductivityManager:
     def run_menu(self):
         while True:
             print("\n--- Productivity Menu ---\n")
-            choice = int(input("What do you wish to do?\n1. Add new task\n2. Remove existing task\n3. View existing tasks\n4. Back to main menu\n\nChoice: "))
-            if choice == 1:
+            productivity_choice = int(input("What do you wish to do?\n1. Add new task\n2. Remove existing task\n3. View existing tasks\n4. Back to main menu\n\nChoice: "))
+            if productivity_choice == 1:
                 self.add_task()
-            elif choice == 2:
+            elif productivity_choice == 2:
                 self.remove_task()
-            elif choice == 3:
+            elif productivity_choice == 3:
                 self.view_tasks()
-            elif choice == 4:
+            elif productivity_choice == 4:
                 break 
             else:
                 print("Error: Please enter a valid number!")
@@ -48,8 +48,8 @@ class ProductivityManager:
     def remove_task(self):
         for i, task in enumerate(self.tasks):
             print(f"{i}: {task['Name']}")
-        removing_choice = int(input("Enter the number of the task to remove: "))
-        self.tasks.pop(removing_choice)
+        task_removing_choice = int(input("Enter the number of the task to remove: "))
+        self.tasks.pop(task_removing_choice)
         print("Task removed.")
 
     def view_tasks(self):
