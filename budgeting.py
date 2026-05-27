@@ -35,10 +35,13 @@ while True:
         else:
             break
     elif budgeting_choice == 2:
+        #removing values
         budget_removing_choice = int(input("What would you like to remove?\n1. Income\n2. Expense\n3. Back to main menu\n\nChoice: "))
         if addition_choice == 1:
+            #adding indexes to list to indentify values in the list 
             for i, income in enumerate(Income):
                 print(f"Index {i}: {income}")
+            #removing the specific index
             income_removing_choice = int(input("Enter the index of the income to remove: "))
             Income.pop(income_removing_choice)
             print("Income removed.")
@@ -53,7 +56,8 @@ while True:
     elif budgeting_choice == 3:
         view_choice = int(input("What do you wish to view?\n1. History\n2. Calender\n3. Back to main menu\n\nChoice: "))
         if view_choice == 1:
-            income_history = None
+            for i in range (len(Income)):
+                total_income += (Income["Amount"])
         elif view_choice == 2:
             print("On the way")
         elif view_choice == 3:
