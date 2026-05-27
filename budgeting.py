@@ -75,6 +75,8 @@ while True:
                 total_expense += i["Amount"]
             for i in Budget:
                 total_budget += i["Amount"]
+            print(f"Your total income was {total_income}.\nYour total expense was {total_expense}.")
+            print(f"Income summary:\n{Income}\n\nExpense summary:\n{Expense}\n\n")
             if total_expense > total_budget:
                 print(f"Budget was exceeded by {total_expense - total_budget}.")
             else:
