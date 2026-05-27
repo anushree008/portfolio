@@ -1,9 +1,10 @@
 import datetime
 Income = []
 Expense = []
+Budget = []
 total_income = 0
 total_expense = 0
-budget = 0
+total_budget = 0
 #keeping the loop running
 while True:
     print("--- Budgeting Menu ---\n")
@@ -38,7 +39,12 @@ while True:
         elif addition_choice == 3:
             budget_type = input("Enter budget type:\n")
             budget_amount = float(input("Enter the montly budget you would like to set:\n"))
-            
+            budget_dictonary = {
+                "Type" : budget_type,
+                "Amount" : budget_amount
+            }
+            Budget.append(budget_dictonary)
+            print("The montly budget is set!")
         else:
             break
     elif budgeting_choice == 2:
@@ -67,6 +73,12 @@ while True:
                 total_income += i["Amount"]
             for i in Expense:
                 total_expense += i["Amount"]
+            for i in Budget:
+                total_budget += i["Amount"]
+            if total_expense > total_budget:
+                print(f"Budget was exceeded by {total_expense - total_budget}.")
+            else:
+                print(f"You managed to stay within the budget by {total_budget - total_expense}.")
         elif view_choice == 2:
             print("On the way")
         elif view_choice == 3:
