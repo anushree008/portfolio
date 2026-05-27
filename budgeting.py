@@ -2,7 +2,7 @@ Income = []
 Expense = []
 while True:
     print("--- Budgeting Menu ---\n")
-    budgeting_choice = int(input("What do you wish to do?\n1. Add new Income/Expene\n2. Remove existing Income/Expense\n3. View calendar\n4. Back to main menu\n\nChoice: "))
+    budgeting_choice = int(input("What do you wish to do?\n1. Add new Income/Expene\n2. Remove existing Income/Expense\n3. View\n4. Back to main menu\n\nChoice: "))
     if budgeting_choice == 1:
         addition_choice = int(input("What would you like to add?\n1. Income\n2. Expense\n3. Back to main menu\n\nChoice: "))
         if addition_choice == 1:
@@ -30,7 +30,15 @@ while True:
         else:
             break
     elif budgeting_choice == 3:
-        print("On the way")
+        view_choice = int(input("What do you wish to view?\n1. History\n2. Calender\n3. Back to main menu\n\nChoice: "))
+        if view_choice == 1:
+            None
+        elif view_choice == 2:
+            print("On the way")
+        elif view_choice == 3:
+            break
+        else:
+            print("Error: Please enter a valid choice!")
     elif budgeting_choice == 4:
         break
     else:
