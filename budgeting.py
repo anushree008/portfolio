@@ -2,17 +2,19 @@ import datetime
 Income = []
 Expense = []
 total_income = 0
+total_expense = 0
+budget = 0
 #keeping the loop running
 while True:
     print("--- Budgeting Menu ---\n")
-    budgeting_choice = int(input("What do you wish to do?\n1. Add new Income/Expene\n2. Remove existing Income/Expense\n3. View\n4. Back to main menu\n\nChoice: "))
+    budgeting_choice = int(input("What do you wish to do?\n1. Add new Income/Expense/Monthly budegt\n2. Remove existing Income/Expense/Budget\n3. View\n4. Back to main menu\n\nChoice: "))
     if budgeting_choice == 1:
         #adding values
-        addition_choice = int(input("What would you like to add?\n1. Income\n2. Expense\n3. Back to main menu\n\nChoice: "))
+        addition_choice = int(input("What would you like to add?\n1. Income\n2. Expense\n3. Monthly budget\n4. Back to main menu\n\nChoice: "))
         if addition_choice == 1:
             #dictonary for income to save multiple values in a single list
             income_type = input("Enter income type:\n")
-            income_value = int(input("Enter amount of income:\n"))
+            income_value = float(input("Enter amount of income:\n"))
             income_date = datetime(input("Enter the date in the format (dd:MM:yy):\n"))
             income_dictonary  = {
                 "Type" : income_type,
@@ -24,7 +26,7 @@ while True:
         elif addition_choice == 2:
             #dictonary for expense to save multiple values in a single list
             expense_type = input("Enter expense type:\n")
-            expense_value = int(input("Enter the amount of expense:\n"))
+            expense_value = float(input("Enter the amount of expense:\n"))
             expense_date = datetime(input("Enter the date in the format (dd:MM:yy):\n"))
             expense_dictonary = {
                 "Type" : expense_type,
@@ -33,6 +35,10 @@ while True:
             }
             Expense.append(expense_dictonary)
             print("New expense is added!")
+        elif addition_choice == 3:
+            budget_type = input("Enter budget type:\n")
+            budget_amount = float(input("Enter the montly budget you would like to set:\n"))
+            
         else:
             break
     elif budgeting_choice == 2:
@@ -59,6 +65,8 @@ while True:
         if view_choice == 1:
             for i in Income:
                 total_income += i["Amount"]
+            for i in Expense:
+                total_expense += i["Amount"]
         elif view_choice == 2:
             print("On the way")
         elif view_choice == 3:
