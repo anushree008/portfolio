@@ -41,10 +41,10 @@ while True:
                     Budget.append(budget_dictonary)
                     print("The montly budget is set!")
                 case 4:
-                    go_back = True
+                    go_back = False
                 case _:
                     print("Error: Please enter a valid choice!")
-            if go_back == True:
+            if go_back == False:
                 continue
         case 2:
             budget_removing_choice = int(input("What would you like to remove?\n1. Income\n2. Expense\n3. Back to main menu\n\nChoice: "))
@@ -63,7 +63,7 @@ while True:
                     Expense.pop(expense_removing_choice)
                     print("Expense removed.")
                 case 3:
-                    go_back = True
+                    go_back = False
                 case _:
                     print("Error: Please enter a valid choice!")
             if go_back == False:
