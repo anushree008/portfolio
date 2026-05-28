@@ -83,3 +83,13 @@ while True:
                         print(f"Budget was exceeded by {total_expense - total_budget}.")
                     else:
                         print(f"You managed to stay within the budget by {total_budget - total_expense}.")
+                case 2:
+                    print("Onthe way!")
+                case 3:
+                    break
+                case _:
+                    print("Error: Please enter a valid choice!")
+        case 4:
+            break
+        case _:
+            print("Error: Please enter a valid choice!")
