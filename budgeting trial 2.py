@@ -67,3 +67,19 @@ while True:
                     break
                 case 4:
                     print("Error: Please enter a valid choice!")
+        case 3:
+            view_choice = int(input("What do you wish to view?\n1. History\n2. Calender\n3. Back to main menu\n\nChoice: "))
+            match view_choice:
+                case 1:
+                    for i in Income:
+                        total_income += i["Amount"]
+                    for i in Expense:
+                        total_expense += i["Amount"]
+                    for i in Budget:
+                        total_budget += i["Amount"]
+                    print(f"Your total income was {total_income}.\nYour total expense was {total_expense}.")
+                    print(f"Income summary:\n{Income}\n\nExpense summary:\n{Expense}\n\n")
+                    if total_expense > total_budget:
+                        print(f"Budget was exceeded by {total_expense - total_budget}.")
+                    else:
+                        print(f"You managed to stay within the budget by {total_budget - total_expense}.")

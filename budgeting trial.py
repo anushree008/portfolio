@@ -28,7 +28,7 @@ while True:
             #dictonary for expense to save multiple values in a single list
             expense_type = input("Enter expense type:\n")
             expense_value = float(input("Enter the amount of expense:\n"))
-            expense_date = datetime(input("Enter the date in the format (dd:MM:yy):\n"))
+            expense_date = datetime.datetime.strptime(input("Enter the date in the format (dd:MM:yy):\n"))
             expense_dictonary = {
                 "Type" : expense_type,
                 "Amount" : expense_value,
