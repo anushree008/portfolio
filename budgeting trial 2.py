@@ -112,8 +112,7 @@ while True:
             if go_back == False:
                 continue
         case 4:
-            go_back = False
+            print("Goodbye!")
+            break
         case _:
             print("Error: Please enter a valid choice!")
-    if go_back == False:
-        continue
