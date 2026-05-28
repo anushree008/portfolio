@@ -23,7 +23,7 @@ while True:
                 case 2:
                     expense_type = input("Enter expense type:\n")
                     expense_value = float(input("Enter the amount of expense:\n"))
-                    expense_date = datetime(input("Enter the date in the format (dd:MM:yy):\n","%d:%m:%y"))
+                    expense_date = datetime.datetime.strptime(input("Enter the date in the format (dd:MM:yy):\n","%d:%m:%y"))
                     expense_dictonary = {
                         "Type" : expense_type,
                         "Amount" : expense_value,
@@ -70,7 +70,7 @@ while True:
                 case 1:
                     history_choice = int(input("What do you wish to view?\n1. Montly expenses\n2. Income summary\n3. Expense summary\n4. Budget list\n5. Back to main menu\n\nChoice: "))
                     total_income = 0
-                    total_exppense = 0
+                    total_expense = 0
                     total_budget = 0
                     for i in Income:
                         total_income += i["Amount"]
