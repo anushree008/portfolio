@@ -15,7 +15,7 @@ while True:
                 case 1:
                     income_type = input("Enter income type:\n")
                     income_value = float(input("Enter amount of income:\n"))
-                    income_date = datetime(input("Enter the date in the format (dd:MM:yy):\n"))
+                    income_date = datetime.datetime.strptime(input("Enter the date in the format (dd:MM:yy):\n"))
                     income_dictonary  = {
                         "Type" : income_type,
                         "Amount" : income_value,
@@ -46,4 +46,24 @@ while True:
                 case 4:
                     break
                 case _:
+                    print("Error: Please enter a valid choice!")
+        case 2:
+            budget_removing_choice = int(input("What would you like to remove?\n1. Income\n2. Expense\n3. Back to main menu\n\nChoice: "))
+            match budget_removing_choice:
+                case 1:
+                    for i, income in enumerate(Income):
+                        print(f"Index {i}: {income}")
+                    #removing the specific index
+                    income_removing_choice = int(input("Enter the index of the income to remove: "))
+                    Income.pop(income_removing_choice)
+                    print("Income removed.")
+                case 2:
+                    for i, expense in enumerate(Expense):
+                        print(f"Index {i}: {expense}")
+                    expense_removing_choice = int(input("Enter the index of the expense to remove: "))
+                    Expense.pop(expense_removing_choice)
+                    print("Expense removed.")
+                case 3:
+                    break
+                case 4:
                     print("Error: Please enter a valid choice!")
