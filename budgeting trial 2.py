@@ -3,6 +3,7 @@ Income = []
 Expense = []
 Budget = []
 while True:
+    go_back = True
     print("--- Budgeting Menu ---")
     budgeting_choice = int(input("What do you wish to do?\n1. Add new Income/Expense/Monthly budegt\n2. Remove existing Income/Expense/Budget\n3. View\n4. Back to main menu\n\nChoice: "))
     match budgeting_choice:
